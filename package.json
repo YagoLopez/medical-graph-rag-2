@@ -3,11 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "fastapi-dev": "pip3 install -r requirements.txt && python3 -m uvicorn api.index:app --reload",
+    "fastapi-dev": "python -m pip install -r requirements.txt && python -m uvicorn api.index:app --reload",
+    "fastapi-dev2": "python -m uvicorn api.index:app --reload",
     "next-dev": "next dev",
-    "dev": "concurrently \"npm run next-dev\" \"npm run fastapi-dev\"",
+    "dev": "concurrently \"pnpm run next-dev\" \"pnpm run fastapi-dev2\"",
     "build": "next build",
     "start": "next start",
+    "start:local": "concurrently \"npm run start\" \"npm run fastapi-dev2\"",
     "lint": "next lint"
   },
   "dependencies": {
@@ -29,18 +31,21 @@
     "framer-motion": "^11.11.17",
     "geist": "^1.3.1",
     "lucide-react": "^0.460.0",
-    "next": "13.4.4",
+    "next": "16.2.4",
     "postcss": "8.4.23",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "react": "19.2.5",
+    "react-dom": "19.2.5",
     "sonner": "^1.5.0",
     "streamdown": "^1.6.7",
     "tailwind-merge": "^2.5.4",
     "tailwindcss": "3.4.15",
     "tailwindcss-animate": "^1.0.7",
-    "types": "link:next-themes/dist/types",
-    "typescript": "5.0.4",
     "usehooks-ts": "^3.1.0",
     "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "remark-cjk-friendly": "^2.0.1",
+    "remark-cjk-friendly-gfm-strikethrough": "^2.0.1",
+    "remark-gfm": "^4.0.1"
   }
 }

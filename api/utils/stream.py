@@ -32,7 +32,7 @@ def stream_text(
 
         stream = client.chat.completions.create(
             messages=messages,
-            model="gpt-4o",
+            model="gemini-2.5-flash",
             stream=True,
             tools=tool_definitions,
         )
