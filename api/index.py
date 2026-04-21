@@ -28,12 +28,13 @@ class Request(BaseModel):
 
 @app.post("/api/chat")
 async def handle_chat_data(request: Request, protocol: str = Query('data')):
-    print(f"DEBUG: GOOGLE_API_KEY es -> {os.environ.get('GOOGLE_API_KEY')}")
+    apiKey = os.getenv("GOOGLE_API_KEY")
+    print(f"DEBUG: GOOGLE_API_KEY es -> {apiKey}")
     messages = request.messages
     openai_messages = convert_to_openai_messages(messages)
 
     client = OpenAI(
-        api_key=os.environ.get("GOOGLE_API_KEY"),
+        api_key=apiKey,
         base_url="https://generativelanguage.googleapis.com/v1beta/openai/"
     )
     response = StreamingResponse(
