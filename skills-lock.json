@@ -1,6 +1,16 @@
 {
   "version": 1,
   "skills": {
+    "adk-cheatsheet": {
+      "source": "google/adk-docs",
+      "sourceType": "github",
+      "computedHash": "dcaba0eafbbc1c492277b6bf5553c3841f2f9d2f8666a2b5ea8e3f7826f2ba96"
+    },
+    "adk-dev-guide": {
+      "source": "google/adk-docs",
+      "sourceType": "github",
+      "computedHash": "97060e99691a19662e85987ef22052012427b47a695942ce7e828b75a74289a5"
+    },
     "ai-sdk": {
       "source": "vercel/ai",
       "sourceType": "github",
